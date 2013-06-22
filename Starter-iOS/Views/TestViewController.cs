@@ -3,10 +3,12 @@ using System.Drawing;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using ReactiveUI.Cocoa;
+using ReactiveUI;
+using Starter.Core.ViewModels;
 
 namespace Starter.Views
 {
-    public partial class TestViewController : ReactiveViewController
+    public partial class TestViewController : ReactiveViewController, IViewFor<TestViewModel>
     {
         static bool UserInterfaceIdiomIsPhone
         {
@@ -14,7 +16,7 @@ namespace Starter.Views
         }
 
         public TestViewController()
-            : base (UserInterfaceIdiomIsPhone ? "Starter_iOSViewController_iPhone" : "Starter_iOSViewController_iPad", null)
+            : base (UserInterfaceIdiomIsPhone ? "TestViewController_iPhone" : "TestViewController_iPad", null)
         {
         }
 
@@ -29,20 +31,20 @@ namespace Starter.Views
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            
-            // Perform any additional setup after loading the view, typically from a nib.
+
+            ViewModel = new TestViewModel();
+            this.OneWayBind(ViewModel, x => x.TheGuid, x => x.TheGuid.Text);
         }
 
-        public override bool ShouldAutorotateToInterfaceOrientation(UIInterfaceOrientation toInterfaceOrientation)
-        {
-            // Return true for supported orientations
-            if (UserInterfaceIdiomIsPhone)
-            {
-                return (toInterfaceOrientation != UIInterfaceOrientation.PortraitUpsideDown);
-            } else
-            {
-                return true;
-            }
+        TestViewModel _ViewModel;
+        public TestViewModel ViewModel {
+            get { return _ViewModel; }
+            set { this.RaiseAndSetIfChanged(ref _ViewModel, value); }
+        }
+
+        object IViewFor.ViewModel {
+            get { return ViewModel; }
+            set { ViewModel = (TestViewModel)value; }
         }
     }
 }

@@ -6,11 +6,13 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using ReactiveUI.Android;
+using ReactiveUI;
+using Starter.Core.ViewModels;
 
 namespace Starter.Views
 {
     [Activity (Label = "Starter-Android", MainLauncher = true)]
-    public class TestActivity : ReactiveActivity
+    public class TestActivity : ReactiveActivity, IViewFor<TestViewModel>
     {
         int count = 1;
 
@@ -29,7 +31,25 @@ namespace Starter.Views
             {
                 button.Text = string.Format("{0} clicks!", count++);
             };
+
+            TheGuid = FindViewById<TextView>(Resource.Id.TheGuid);
+
+            ViewModel = new TestViewModel();
+            this.OneWayBind(ViewModel, x => x.TheGuid, x => x.TheGuid.Text);
         }
+
+        TestViewModel _ViewModel;
+        public TestViewModel ViewModel {
+            get { return _ViewModel; }
+            set { this.RaiseAndSetIfChanged(ref _ViewModel, value); }
+        }
+
+        object IViewFor.ViewModel {
+            get { return ViewModel; }
+            set { ViewModel = (TestViewModel)value; }
+        }
+
+        public TextView TheGuid { get; protected set; }
     }
 }
 

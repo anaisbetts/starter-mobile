@@ -832,6 +832,9 @@ namespace Starter
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f050034
+			public const int TheGuid = 2131034164;
+			
 			// aapt resource value: 0x7f050022
 			public const int abs__action_bar = 2131034146;
 			

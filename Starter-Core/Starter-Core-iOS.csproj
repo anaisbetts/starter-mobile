@@ -10,7 +10,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Starter.Core</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>Starter-Core</AssemblyName>
+    <AssemblyName>Starter-Core-iOS</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
