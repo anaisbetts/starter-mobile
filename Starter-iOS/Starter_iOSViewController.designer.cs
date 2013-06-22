@@ -5,7 +5,7 @@
 //
 using MonoTouch.Foundation;
 
-namespace StarteriOS
+namespace Starter
 {
     [Register ("Starter_iOSViewController")]
     partial class Starter_iOSViewController

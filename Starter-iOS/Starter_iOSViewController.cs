@@ -3,7 +3,7 @@ using System.Drawing;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
-namespace StarteriOS
+namespace Starter
 {
     public partial class Starter_iOSViewController : UIViewController
     {

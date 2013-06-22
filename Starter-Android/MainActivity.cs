@@ -6,7 +6,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
-namespace StarterAndroid
+namespace Starter
 {
     [Activity (Label = "Starter-Android", MainLauncher = true)]
     public class MainActivity : Activity

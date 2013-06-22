@@ -8,7 +8,7 @@
     <ProjectGuid>{044066A7-4F56-429A-8866-B14CF24E4D41}</ProjectGuid>
     <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
-    <RootNamespace>StarteriOS</RootNamespace>
+    <RootNamespace>Starter</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>StarteriOS</AssemblyName>
   </PropertyGroup>
@@ -100,10 +100,4 @@
     <InterfaceDefinition Include="Starter_iOSViewController_iPad.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <ProjectReference Include="..\Starter-Core\Starter-Core-iOS.csproj">
-      <Project>{B44B8C61-31FB-4598-86F0-DDA8A18F2993}</Project>
-      <Name>Starter-Core-iOS</Name>
-    </ProjectReference>
-  </ItemGroup>
 </Project>
