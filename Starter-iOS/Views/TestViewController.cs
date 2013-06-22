@@ -2,17 +2,18 @@ using System;
 using System.Drawing;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using ReactiveUI.Cocoa;
 
-namespace Starter
+namespace Starter.Views
 {
-    public partial class Starter_iOSViewController : UIViewController
+    public partial class TestViewController : ReactiveViewController
     {
         static bool UserInterfaceIdiomIsPhone
         {
             get { return UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone; }
         }
 
-        public Starter_iOSViewController()
+        public TestViewController()
             : base (UserInterfaceIdiomIsPhone ? "Starter_iOSViewController_iPhone" : "Starter_iOSViewController_iPad", null)
         {
         }

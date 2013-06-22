@@ -5,11 +5,12 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using ReactiveUI.Android;
 
-namespace Starter
+namespace Starter.Views
 {
     [Activity (Label = "Starter-Android", MainLauncher = true)]
-    public class MainActivity : Activity
+    public class TestActivity : ReactiveActivity
     {
         int count = 1;
 

@@ -87,7 +87,7 @@
                 </array>
             </object>
             <dictionary class="NSMutableDictionary" key="flattenedProperties">
-                <string key="-1.CustomClassName">Starter_iOSViewController</string>
+                <string key="-1.CustomClassName">TestViewController</string>
                 <string key="-1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
                 <string key="-2.CustomClassName">UIResponder</string>
                 <string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -102,11 +102,11 @@
         <object class="IBClassDescriber" key="IBDocument.Classes">
             <array class="NSMutableArray" key="referencedPartialClassDescriptions">
                 <object class="IBPartialClassDescription">
-                    <string key="className">Starter_iOSViewController</string>
+                    <string key="className">TestViewController</string>
                     <string key="superclassName">UIViewController</string>
                     <object class="IBClassDescriptionSource" key="sourceIdentifier">
                         <string key="majorKey">IBProjectSource</string>
-                        <string key="minorKey">Starter_iOSViewController.h</string>
+                        <string key="minorKey">TestViewController.h</string>
                     </object>
                 </object>
             </array>

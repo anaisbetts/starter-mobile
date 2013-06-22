@@ -5,10 +5,10 @@
 //
 using MonoTouch.Foundation;
 
-namespace Starter
+namespace Starter.Views
 {
-    [Register ("Starter_iOSViewController")]
-    partial class Starter_iOSViewController
+    [Register ("TestViewController")]
+    partial class TestViewController
     {
         void ReleaseDesignerOutlets ()
         {

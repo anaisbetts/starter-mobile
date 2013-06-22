@@ -114,6 +114,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -121,14 +122,14 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="Starter_iOSViewController.cs" />
-    <Compile Include="Starter_iOSViewController.designer.cs">
-      <DependentUpon>Starter_iOSViewController.cs</DependentUpon>
+    <Compile Include="Views\TestViewController.cs" />
+    <Compile Include="Views\TestViewController.designer.cs">
+      <DependentUpon>TestViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <InterfaceDefinition Include="Starter_iOSViewController_iPhone.xib" />
-    <InterfaceDefinition Include="Starter_iOSViewController_iPad.xib" />
+    <InterfaceDefinition Include="Views\TestViewController_iPhone.xib" />
+    <InterfaceDefinition Include="Views\TestViewController_iPad.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

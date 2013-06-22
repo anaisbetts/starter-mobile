@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using Starter.Views;
 
 namespace Starter
 {
@@ -14,7 +15,7 @@ namespace Starter
     {
         // class-level declarations
         UIWindow window;
-        Starter_iOSViewController viewController;
+        TestViewController viewController;
         //
         // This method is invoked when the application has loaded and is ready to run. In this 
         // method you should instantiate the window, load the UI into it and then make the window
@@ -26,7 +27,7 @@ namespace Starter
         {
             window = new UIWindow(UIScreen.MainScreen.Bounds);
             
-            viewController = new Starter_iOSViewController();
+            viewController = new TestViewController();
             window.RootViewController = viewController;
             window.MakeKeyAndVisible();
             
