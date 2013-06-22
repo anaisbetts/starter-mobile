@@ -100,4 +100,10 @@
     <InterfaceDefinition Include="Starter_iOSViewController_iPad.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\Starter-Core\Starter-Core-iOS.csproj">
+      <Project>{B44B8C61-31FB-4598-86F0-DDA8A18F2993}</Project>
+      <Name>Starter-Core-iOS</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
