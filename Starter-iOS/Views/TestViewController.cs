@@ -5,6 +5,8 @@ using MonoTouch.UIKit;
 using ReactiveUI.Cocoa;
 using ReactiveUI;
 using Starter.Core.ViewModels;
+using Akavache;
+using System.Reactive.Linq;
 
 namespace Starter.Views
 {
@@ -28,12 +30,14 @@ namespace Starter.Views
             // Release any cached data, images, etc that aren't in use.
         }
 
-        public override void ViewDidLoad()
+        public override async void ViewDidLoad()
         {
             base.ViewDidLoad();
-
-            ViewModel = new TestViewModel();
             this.OneWayBind(ViewModel, x => x.TheGuid, x => x.TheGuid.Text);
+
+            ViewModel = await BlobCache.LocalMachine.GetOrCreateObject("TestViewModel", () => {
+                return new TestViewModel();
+            });
         }
 
         TestViewModel _ViewModel;
