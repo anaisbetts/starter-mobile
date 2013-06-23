@@ -57,6 +57,9 @@
       <HintPath>..\ext\Monotouch\Xamarin.Mobile.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Akavache.Portable">
+      <HintPath>..\ext\Monotouch\Akavache.Portable.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
