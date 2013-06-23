@@ -6,6 +6,7 @@ using ReactiveUI.Cocoa;
 using ReactiveUI;
 using Starter.Core.ViewModels;
 using Akavache;
+using System.Reactive.Linq;
 
 namespace Starter.Views
 {
@@ -34,7 +35,9 @@ namespace Starter.Views
             base.ViewDidLoad();
             this.OneWayBind(ViewModel, x => x.TheGuid, x => x.TheGuid.Text);
 
-            ViewModel = await BlobCache.LocalMachine.GetOrCreateObject("TestViewModel", () => new TestViewModel());
+            ViewModel = await BlobCache.LocalMachine.GetOrCreateObject("TestViewModel", () => {
+                return new TestViewModel();
+            });
         }
 
         TestViewModel _ViewModel;
