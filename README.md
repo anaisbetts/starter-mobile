@@ -3,6 +3,8 @@
 This project is a base project for cross-platform mobile applications that
 should help you get started quicker without hours of right-clicking.
 
+![](https://github-team.s3.amazonaws.com/uploads/statuses/16078/images/ios-upload.png)
+
 ## Using this for your new rad project
 
 1. Clone it down
