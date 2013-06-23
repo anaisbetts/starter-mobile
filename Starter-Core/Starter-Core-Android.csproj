@@ -63,6 +63,9 @@
       <HintPath>..\ext\Monotouch\System.Reactive.PlatformServices.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Akavache.Portable">
+      <HintPath>..\ext\Monoandroid\Akavache.Portable.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />

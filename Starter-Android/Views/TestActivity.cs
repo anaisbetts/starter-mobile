@@ -8,6 +8,7 @@ using Android.OS;
 using ReactiveUI.Android;
 using ReactiveUI;
 using Starter.Core.ViewModels;
+using Akavache;
 
 namespace Starter.Views
 {
@@ -16,9 +17,10 @@ namespace Starter.Views
     {
         int count = 1;
 
-        protected override void OnCreate(Bundle bundle)
+        protected override async void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
+            BlobCache.ApplicationName = "Starter";
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
@@ -34,8 +36,9 @@ namespace Starter.Views
 
             TheGuid = FindViewById<TextView>(Resource.Id.TheGuid);
 
-            ViewModel = new TestViewModel();
             this.OneWayBind(ViewModel, x => x.TheGuid, x => x.TheGuid.Text);
+
+            ViewModel = await BlobCache.LocalMachine.GetOrCreateObject("TestViewModel", () => new TestViewModel());
         }
 
         TestViewModel _ViewModel;
