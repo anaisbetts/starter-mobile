@@ -20,7 +20,7 @@ I think it'd look way better than '-' too.
 ## How do I build the project
 
 ```sh
-script/build
+script/cibuild
 ```
 
 ## What's the project structure here?
