@@ -9,4 +9,4 @@ if [ ! -f "$MDTOOL" ]; then
 fi
 
 scriptdir=`dirname $BASH_SOURCE`
-find "$scriptdir/.." -type f -name "*.sln" -exec "$MDTOOL" build $@ "{}" \;
+find "$scriptdir/.." -type f -name "*.sln" -exec "$MDTOOL" build "$@" "{}" \;
