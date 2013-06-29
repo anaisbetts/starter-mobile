@@ -5,14 +5,23 @@ should help you get started quicker without hours of right-clicking.
 
 ![](https://github-team.s3.amazonaws.com/uploads/statuses/16078/images/ios-upload.png)
 
-## Using this for your new rad project
+## How do I get started?
 
-1. Clone it down
-1. Rename the directories and files to have the right project name
-1. Do a find-replace for Starter and replace it with your project name
+```sh
+git clone https://github.com/github/starter-mobile
+script/create NameOfMyNewProject
+git remote set-url origin https://github.com/github/NameOfMyNewProject
+git push -u origin master
+```
 
 NOTE: Don't use a '.' in any of your project names, iOS gets hella upset. Yes,
 I think it'd look way better than '-' too.
+
+## How do I build the project
+
+```sh
+script/build
+```
 
 ## What's the project structure here?
 
