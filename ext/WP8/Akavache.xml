@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Akavache</name>
+    </assembly>
+    <members>
+        <member name="T:Akavache.PersistentBlobCache">
+            <summary>
+            This class represents an asynchronous key-value store backed by a 
+            directory. It stores the last 'n' key requests in memory.
+            </summary>
+        </member>
+        <member name="M:Akavache.PersistentBlobCache.BeforeWriteToDiskFilter(System.Byte[],System.Reactive.Concurrency.IScheduler)">
+            <summary>
+            This method is called immediately before writing any data to disk.
+            Override this in encrypting data stores in order to encrypt the
+            data.
+            </summary>
+            <param name="data">The byte data about to be written to disk.</param>
+            <param name="scheduler">The scheduler to use if an operation has
+            to be deferred. If the operation can be done immediately, use
+            Observable.Return and ignore this parameter.</param>
+            <returns>A Future result representing the encrypted data</returns>
+        </member>
+        <member name="M:Akavache.PersistentBlobCache.AfterReadFromDiskFilter(System.Byte[],System.Reactive.Concurrency.IScheduler)">
+            <summary>
+            This method is called immediately after reading any data to disk.
+            Override this in encrypting data stores in order to decrypt the
+            data.
+            </summary>
+            <param name="data">The byte data that has just been read from
+            disk.</param>
+            <param name="scheduler">The scheduler to use if an operation has
+            to be deferred. If the operation can be done immediately, use
+            Observable.Return and ignore this parameter.</param>
+            <returns>A Future result representing the decrypted data</returns>
+        </member>
+        <member name="M:Akavache.AkavacheHttpMixin.DownloadUrl(Akavache.IBlobCache,System.String,System.Collections.Generic.IDictionary{System.String,System.String},System.Boolean,System.Nullable{System.DateTimeOffset})">
+            <summary>
+            Download data from an HTTP URL and insert the result into the
+            cache. If the data is already in the cache, this returns
+            a cached value. The URL itself is used as the key.
+            </summary>
+            <param name="url">The URL to download.</param>
+            <param name="headers">An optional Dictionary containing the HTTP
+            request headers.</param>
+            <param name="fetchAlways">Force a web request to always be issued, skipping the cache.</param>
+            <param name="absoluteExpiration">An optional expiration date.</param>
+            <returns>The data downloaded from the URL.</returns>
+        </member>
+        <member name="T:Akavache.IFilesystemProvider">
+            <summary>
+            An abstraction for the simple file operations that an IBlobCache can
+            perform. Create a new instance of this when adapting IBlobCache to
+            different platforms or backing stores, or for testing purposes.
+            </summary>
+        </member>
+        <member name="M:Akavache.IFilesystemProvider.SafeOpenFileAsync(System.String,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,System.Reactive.Concurrency.IScheduler)">
+            <summary>
+            Open a file on a background thread, with the File object in 'async
+            mode'. It is critical that this operation is deferred and returns
+            immediately (i.e. wrapped in an Observable.Start).
+            </summary>
+            <param name="path">The path to the file</param>
+            <param name="mode">The file mode</param>
+            <param name="access">The required access privileges</param>
+            <param name="share">The allowed file sharing modes.</param>
+            <param name="scheduler">The scheduler to schedule the open under.</param>
+            <returns>A Future result representing the Open file.</returns>
+        </member>
+        <member name="M:Akavache.IFilesystemProvider.CreateRecursive(System.String)">
+            <summary>
+            Create a directory and its parents. If the directory already
+            exists, this method does nothing (i.e. it does not throw if a
+            directory exists)
+            </summary>
+            <param name="path">The path to create.</param>
+        </member>
+        <member name="M:Akavache.IFilesystemProvider.Delete(System.String)">
+            <summary>
+            Deletes a file.
+            </summary>
+            <param name="path">The path to the file</param>
+        </member>
+        <member name="M:Akavache.IFilesystemProvider.GetDefaultLocalMachineCacheDirectory">
+            <summary>
+            Gets the default local machine cache directory (i.e. the one for temporary data)
+            </summary>
+            <returns>The default local machine cache directory.</returns>
+        </member>
+        <member name="M:Akavache.IFilesystemProvider.GetDefaultRoamingCacheDirectory">
+            <summary>
+            Gets the default roaming cache directory (i.e. the one for user settings)
+            </summary>
+            <returns>The default roaming cache directory.</returns>
+        </member>
+        <member name="M:Akavache.IFilesystemProvider.GetDefaultSecretCacheDirectory">
+            <summary>
+            Gets the default roaming cache directory (i.e. the one for user settings)
+            </summary>
+            <returns>The default roaming cache directory.</returns>
+        </member>
+    </members>
+</doc>

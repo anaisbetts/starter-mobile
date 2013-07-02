@@ -570,62 +570,33 @@
             the collection or any of its items have changed, in any way".
             </summary>
         </member>
-        <member name="P:ReactiveUI.IReactiveCollection.ItemsAdded">
+        <member name="T:ReactiveUI.IReactiveCollection`1">
             <summary>
-            Fires when items are added to the collection, once per item added.
-            Functions that add multiple items such AddRange should fire this
-            multiple times. The object provided is the item that was added.
+            IReactiveCollection of T is the typed version of IReactiveCollection and
+            adds type-specified versions of Observables
             </summary>
         </member>
-        <member name="P:ReactiveUI.IReactiveCollection.BeforeItemsAdded">
+        <member name="T:ReactiveUI.IReactiveNotifyCollectionItemChanged">
             <summary>
-            Fires before an item is going to be added to the collection.
+            IReactiveNotifyCollectionItemChanged provides notifications for collection item updates, ie when an object in
+            a collection changes.
             </summary>
         </member>
-        <member name="P:ReactiveUI.IReactiveCollection.ItemsRemoved">
-            <summary>
-            Fires once an item has been removed from a collection, providing the
-            item that was removed.
-            </summary>
-        </member>
-        <member name="P:ReactiveUI.IReactiveCollection.BeforeItemsRemoved">
-            <summary>
-            Fires before an item will be removed from a collection, providing
-            the item that will be removed.
-            </summary>
-        </member>
-        <member name="P:ReactiveUI.IReactiveCollection.CountChanged">
-            <summary>
-            Fires whenever the number of items in a collection has changed,
-            providing the new Count.
-            </summary>
-        </member>
-        <member name="P:ReactiveUI.IReactiveCollection.CountChanging">
-            <summary>
-            Fires before a collection is about to change, providing the previous
-            Count.
-            </summary>
-        </member>
-        <member name="P:ReactiveUI.IReactiveCollection.IsEmptyChanged">
-            <summary>
-            Fires when a collection becomes or stops being empty.
-            </summary>
-        </member>
-        <member name="P:ReactiveUI.IReactiveCollection.ItemChanging">
+        <member name="P:ReactiveUI.IReactiveNotifyCollectionItemChanged.ItemChanging">
             <summary>
             Provides Item Changing notifications for any item in collection that
             implements IReactiveNotifyPropertyChanged. This is only enabled when
             ChangeTrackingEnabled is set to True.
             </summary>
         </member>
-        <member name="P:ReactiveUI.IReactiveCollection.ItemChanged">
+        <member name="P:ReactiveUI.IReactiveNotifyCollectionItemChanged.ItemChanged">
             <summary>
             Provides Item Changed notifications for any item in collection that
             implements IReactiveNotifyPropertyChanged. This is only enabled when
             ChangeTrackingEnabled is set to True.
             </summary>
         </member>
-        <member name="P:ReactiveUI.IReactiveCollection.ChangeTrackingEnabled">
+        <member name="P:ReactiveUI.IReactiveNotifyCollectionItemChanged.ChangeTrackingEnabled">
             <summary>
             Enables the ItemChanging and ItemChanged properties; when this is
             enabled, whenever a property on any object implementing
@@ -633,19 +604,83 @@
             rebroadcast through ItemChanging/ItemChanged.
             </summary>
         </member>
-        <member name="P:ReactiveUI.IReactiveCollection.Changing">
+        <member name="T:ReactiveUI.IReactiveNotifyCollectionItemChanged`1">
+            <summary>
+            IReactiveNotifyCollectionItemChanged of T is the typed version of IReactiveNotifyCollectionItemChanged and
+            adds type-specified versions of Observables
+            </summary>
+        </member>
+        <member name="P:ReactiveUI.IReactiveNotifyCollectionItemChanged`1.ItemChanging">
+            <summary>
+            Provides Item Changing notifications for any item in collection that
+            implements IReactiveNotifyPropertyChanged. This is only enabled when
+            ChangeTrackingEnabled is set to True.
+            </summary>
+        </member>
+        <member name="P:ReactiveUI.IReactiveNotifyCollectionItemChanged`1.ItemChanged">
+            <summary>
+            Provides Item Changed notifications for any item in collection that
+            implements IReactiveNotifyPropertyChanged. This is only enabled when
+            ChangeTrackingEnabled is set to True.
+            </summary>
+        </member>
+        <member name="T:ReactiveUI.IReactiveNotifyCollectionChanged">
+            <summary>
+            IReactiveCollection provides notifications when the contents
+            of collection are changed (items are added/removed/moved).
+            </summary>
+        </member>
+        <member name="P:ReactiveUI.IReactiveNotifyCollectionChanged.ItemsAdded">
+            <summary>
+            Fires when items are added to the collection, once per item added.
+            Functions that add multiple items such AddRange should fire this
+            multiple times. The object provided is the item that was added.
+            </summary>
+        </member>
+        <member name="P:ReactiveUI.IReactiveNotifyCollectionChanged.BeforeItemsAdded">
+            <summary>
+            Fires before an item is going to be added to the collection.
+            </summary>
+        </member>
+        <member name="P:ReactiveUI.IReactiveNotifyCollectionChanged.ItemsRemoved">
+            <summary>
+            Fires once an item has been removed from a collection, providing the
+            item that was removed.
+            </summary>
+        </member>
+        <member name="P:ReactiveUI.IReactiveNotifyCollectionChanged.BeforeItemsRemoved">
+            <summary>
+            Fires before an item will be removed from a collection, providing
+            the item that will be removed.
+            </summary>
+        </member>
+        <member name="P:ReactiveUI.IReactiveNotifyCollectionChanged.BeforeItemsMoved">
+            <summary>
+            Fires before an items moves from one position in the collection to
+            another, providing the item(s) to be moved as well as source and destination
+            indices.
+            </summary>
+        </member>
+        <member name="P:ReactiveUI.IReactiveNotifyCollectionChanged.ItemsMoved">
+            <summary>
+            Fires once one or more items moves from one position in the collection to
+            another, providing the item(s) that was moved as well as source and destination
+            indices.
+            </summary>
+        </member>
+        <member name="P:ReactiveUI.IReactiveNotifyCollectionChanged.Changing">
             <summary>
             This Observable is equivalent to the NotifyCollectionChanged event,
             but fires before the collection is changed
             </summary>
         </member>
-        <member name="P:ReactiveUI.IReactiveCollection.Changed">
+        <member name="P:ReactiveUI.IReactiveNotifyCollectionChanged.Changed">
             <summary>
             This Observable is equivalent to the NotifyCollectionChanged event,
             and fires after the collection is changed
             </summary>
         </member>
-        <member name="P:ReactiveUI.IReactiveCollection.ShouldReset">
+        <member name="P:ReactiveUI.IReactiveNotifyCollectionChanged.ShouldReset">
             <summary>
             This Observable is fired when a ShouldReset fires on the collection. This
             means that you should forget your previous knowledge of the state
@@ -654,53 +689,85 @@
             Doing It Wrong.
             </summary>
         </member>
-        <member name="T:ReactiveUI.IReactiveCollection`1">
+        <member name="T:ReactiveUI.IReactiveNotifyCollectionChanged`1">
             <summary>
-            IReactiveCollection of T is the typed version of IReactiveCollection and
+            IReactiveNotifyCollectionChanged of T is the typed version of IReactiveNotifyCollectionChanged and
             adds type-specified versions of Observables
             </summary>
         </member>
-        <member name="P:ReactiveUI.IReactiveCollection`1.ItemsAdded">
+        <member name="P:ReactiveUI.IReactiveNotifyCollectionChanged`1.ItemsAdded">
             <summary>
             Fires when items are added to the collection, once per item added.
             Functions that add multiple items such AddRange should fire this
             multiple times. The object provided is the item that was added.
             </summary>
         </member>
-        <member name="P:ReactiveUI.IReactiveCollection`1.BeforeItemsAdded">
+        <member name="P:ReactiveUI.IReactiveNotifyCollectionChanged`1.BeforeItemsAdded">
             <summary>
             Fires before an item is going to be added to the collection.
             </summary>
         </member>
-        <member name="P:ReactiveUI.IReactiveCollection`1.ItemsRemoved">
+        <member name="P:ReactiveUI.IReactiveNotifyCollectionChanged`1.ItemsRemoved">
             <summary>
             Fires once an item has been removed from a collection, providing the
             item that was removed.
             </summary>
         </member>
-        <member name="P:ReactiveUI.IReactiveCollection`1.BeforeItemsRemoved">
+        <member name="P:ReactiveUI.IReactiveNotifyCollectionChanged`1.BeforeItemsRemoved">
             <summary>
             Fires before an item will be removed from a collection, providing
             the item that will be removed.
             </summary>
         </member>
-        <member name="P:ReactiveUI.IReactiveCollection`1.ItemChanging">
+        <member name="P:ReactiveUI.IReactiveNotifyCollectionChanged`1.BeforeItemsMoved">
             <summary>
-            Provides Item Changing notifications for any item in collection that
-            implements IReactiveNotifyPropertyChanged. This is only enabled when
-            ChangeTrackingEnabled is set to True.
+            Fires before an items moves from one position in the collection to
+            another, providing the item(s) to be moved as well as source and destination
+            indices.
             </summary>
         </member>
-        <member name="P:ReactiveUI.IReactiveCollection`1.ItemChanged">
+        <member name="P:ReactiveUI.IReactiveNotifyCollectionChanged`1.ItemsMoved">
             <summary>
-            Provides Item Changed notifications for any item in collection that
-            implements IReactiveNotifyPropertyChanged. This is only enabled when
-            ChangeTrackingEnabled is set to True.
+            Fires once one or more items moves from one position in the collection to
+            another, providing the item(s) that was moved as well as source and destination
+            indices.
+            </summary>
+        </member>
+        <member name="T:ReactiveUI.IReadOnlyReactiveCollection`1">
+            <summary>
+            IReadOnlyReactiveCollection represents a read-only collection that can notify when its
+            contents are changed (either items are added/removed, or the object
+            itself changes).
+            It is important to implement the Changing/Changed from
+            IReactiveNotifyPropertyChanged semantically as "Fire when *anything* in
+            the collection or any of its items have changed, in any way".
             </summary>
         </member>
         <member name="T:ReactiveUI.IReactiveList`1">
             <summary>
-            An IList that reports change notifications
+            IReactiveList represents a list that can notify when its
+            contents are changed (either items are added/removed, or the object
+            itself changes).
+            It is important to implement the Changing/Changed from
+            IReactiveNotifyPropertyChanged semantically as "Fire when *anything* in
+            the collection or any of its items have changed, in any way".
+            </summary>
+        </member>
+        <member name="T:ReactiveUI.IReadOnlyReactiveList`1">
+            <summary>
+            IReactiveList represents a read-only list that can notify when its
+            contents are changed (either items are added/removed, or the object
+            itself changes).
+            It is important to implement the Changing/Changed from
+            IReactiveNotifyPropertyChanged semantically as "Fire when *anything* in
+            the collection or any of its items have changed, in any way".
+            </summary>
+        </member>
+        <member name="T:ReactiveUI.IReactiveDerivedList`1">
+            <summary>
+            IReactiveDerivedList repreents a collection whose contents will "follow" another
+            collection; this method is useful for creating ViewModel collections
+            that are automatically updated when the respective Model collection is updated.
             </summary>
         </member>
         <member name="P:ReactiveUI.IRoutingState.NavigationStack">
@@ -2910,6 +2977,12 @@
             provided equality comparer.
             </summary>
         </member>
+        <member name="M:ReactiveUI.ReactiveDerivedCollection`2.moveSourceIndexInMap(System.Int32,System.Int32)">
+            <summary>
+            Increases (or decreases depending on move direction) all source indices between the source and destination
+            move indices.
+            </summary>
+        </member>
         <member name="M:ReactiveUI.ReactiveDerivedCollection`2.shiftIndicesAtOrOverThreshold(System.Int32,System.Int32)">
             <summary>
             Increases (or decreases) all source indices equal to or higher than the threshold. Represents an
@@ -2917,10 +2990,25 @@
             up or down.
             </summary>
         </member>
+        <member name="M:ReactiveUI.ReactiveDerivedCollection`2.shiftSourceIndicesInRange(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Increases (or decreases) all source indices within the range (lower inclusive, upper exclusive).
+            </summary>
+        </member>
         <member name="T:ReactiveUI.ReactiveDerivedCollection`2.ReferenceEqualityComparer`1">
             <summary>
             Internal equality comparer used for looking up the source object of a property change notification in
             the source list.
+            </summary>
+        </member>
+        <member name="M:ReactiveUI.ReactiveDerivedCollection`2.newPositionForExistingItem(System.Int32,System.Int32,`1)">
+            <summary>
+            Calculates a new destination for an updated item that's already in the list.
+            </summary>
+        </member>
+        <member name="M:ReactiveUI.ReactiveDerivedCollection`2.newPositionForExistingItem``1(System.Collections.Generic.IList{``0},``0,System.Int32,System.Func{``0,``0,System.Int32})">
+            <summary>
+            Calculates a new destination for an updated item that's already in the list.
             </summary>
         </member>
         <member name="M:ReactiveUI.ReactiveCollectionMixins.CreateCollection``1(System.IObservable{``0},System.Nullable{System.TimeSpan},System.Action{System.Exception})">
