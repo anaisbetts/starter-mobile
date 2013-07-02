@@ -36,4 +36,6 @@ files = `git ls-files`.lines.select{|x| !TO_EXCLUDE.detect{|re| re.match x} }.ma
 files.each {|x| `sed -e 's/#{ORIG_NAME_SED}/#{NEW_NAME}/g' -i '' "#{x}" && git add "#{x}"`}
 `git commit --amend -C HEAD`
 
+`git remote set-url origin https://github.com/github/#{NEW_NAME.downcase}`
+
 # :vim tw=120 ts=4 sw=4 et syn=ruby :
