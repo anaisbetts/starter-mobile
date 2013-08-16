@@ -38,35 +38,16 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\ext\Monotouch\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="ReactiveUI">
-      <HintPath>..\ext\Monotouch\ReactiveUI.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reactive.Core">
-      <HintPath>..\ext\Monotouch\System.Reactive.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reactive.Interfaces">
-      <HintPath>..\ext\Monotouch\System.Reactive.Interfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reactive.Linq">
-      <HintPath>..\ext\Monotouch\System.Reactive.Linq.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reactive.PlatformServices">
-      <HintPath>..\ext\Monotouch\System.Reactive.PlatformServices.dll</HintPath>
-    </Reference>
     <Reference Include="Xamarin.Mobile">
       <HintPath>..\ext\Monotouch\Xamarin.Mobile.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="Akavache.Portable">
-      <HintPath>..\ext\Monotouch\Akavache.Portable.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Compile Include="ViewModels\TestViewModel.cs" />
+    <Compile Include="SharedClass.cs" />
   </ItemGroup>
 </Project>

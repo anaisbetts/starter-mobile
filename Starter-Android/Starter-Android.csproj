@@ -43,53 +43,14 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
-    <Reference Include="ActionBarSherlock">
-      <HintPath>..\ext\Monoandroid\ActionBarSherlock.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\ext\Monoandroid\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="ReactiveUI.Android">
-      <HintPath>..\ext\Monoandroid\ReactiveUI.Android.dll</HintPath>
-    </Reference>
-    <Reference Include="ReactiveUI.Mobile">
-      <HintPath>..\ext\Monoandroid\ReactiveUI.Mobile.dll</HintPath>
-    </Reference>
-    <Reference Include="ReactiveUI">
-      <HintPath>..\ext\Monoandroid\ReactiveUI.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reactive.Core">
-      <HintPath>..\ext\Monoandroid\System.Reactive.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reactive.Interfaces">
-      <HintPath>..\ext\Monoandroid\System.Reactive.Interfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reactive.Linq">
-      <HintPath>..\ext\Monoandroid\System.Reactive.Linq.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reactive.PlatformServices">
-      <HintPath>..\ext\Monoandroid\System.Reactive.PlatformServices.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reactive.Providers">
-      <HintPath>..\ext\Monoandroid\System.Reactive.Providers.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Mobile">
       <HintPath>..\ext\Monoandroid\Xamarin.Mobile.dll</HintPath>
     </Reference>
     <Reference Include="Mono.Android.Support.v4" />
     <Reference Include="Mono.Android.Export" />
-    <Reference Include="Akavache.Mobile">
-      <HintPath>..\ext\Monoandroid\Akavache.Mobile.dll</HintPath>
-    </Reference>
-    <Reference Include="Akavache.Portable">
-      <HintPath>..\ext\Monoandroid\Akavache.Portable.dll</HintPath>
-    </Reference>
-    <Reference Include="Akavache.Sqlite3">
-      <HintPath>..\ext\Monoandroid\Akavache.Sqlite3.dll</HintPath>
-    </Reference>
-    <Reference Include="Akavache">
-      <HintPath>..\ext\Monoandroid\Akavache.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
