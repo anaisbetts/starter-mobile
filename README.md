@@ -3,14 +3,14 @@
 This project is a base project for cross-platform mobile applications that
 should help you get started quicker without hours of right-clicking.
 
-<img src="https://github-team.s3.amazonaws.com/uploads/statuses/16078/images/ios-upload.png" width=335 />
+<img src="http://cl.ly/image/0s1S460g3k1r/content#png" width=335 />
 
 ## How do I get started?
 
 ```sh
-git clone https://github.com/github/starter-mobile
+git clone https://github.com/paulcbetts/starter-mobile
 script/create NameOfMyNewProject
-git remote set-url origin https://github.com/github/NameOfMyNewProject
+git remote set-url origin https://github.com/MyUserName/NameOfMyNewProject
 git push -u origin master
 ```
 
