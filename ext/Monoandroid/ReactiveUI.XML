@@ -1903,6 +1903,17 @@
             <returns>An object that when disposes, disconnects the Observable
             from the command.</returns>
         </member>
+        <member name="M:ReactiveUI.ReactiveCommandMixins.InvokeCommand``2(System.IObservable{``0},``1,System.Linq.Expressions.Expression{System.Func{``1,System.Windows.Input.ICommand}})">
+            <summary>
+            A utility method that will pipe an Observable to an ICommand (i.e.
+            it will first call its CanExecute with the provided value, then if
+            the command can be executed, Execute() will be called)
+            </summary>
+            <param name="target">The root object which has the Command.</param>
+            <param name="commandProperty">The expression to reference the Command.</param>
+            <returns>An object that when disposes, disconnects the Observable
+            from the command.</returns>
+        </member>
         <member name="M:ReactiveUI.ReactiveCommandMixins.RegisterAsyncFunction``1(ReactiveUI.IReactiveCommand,System.Func{System.Object,``0},System.Reactive.Concurrency.IScheduler)">
             <summary>
             RegisterAsyncFunction registers an asynchronous method that returns a result
@@ -1954,6 +1965,20 @@
             </summary>
             <param name="property">An Expression representing the property (i.e.
             'x =&gt; x.SomeProperty.SomeOtherProperty'</param>
+            <param name="beforeChange">If True, the Observable will notify
+            immediately before a property is going to change.</param>
+            <returns>An Observable representing the property change
+            notifications for the given property.</returns>
+        </member>
+        <member name="M:ReactiveUI.ReactiveNotifyPropertyChangedMixin.ObservableForProperty``2(``0,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            ObservableForProperty returns an Observable representing the
+            property change notifications for a specific property on a
+            ReactiveObject. This method (unlike other Observables that return
+            IObservedChange) guarantees that the Value property of
+            the IObservedChange is set.
+            </summary>
+            <param name="propertyName">A string containing the property name</param>
             <param name="beforeChange">If True, the Observable will notify
             immediately before a property is going to change.</param>
             <returns>An Observable representing the property change
