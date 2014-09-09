@@ -21,7 +21,6 @@ namespace Starter.Views
         protected override async void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            this.WireUpControls();
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
@@ -35,8 +34,12 @@ namespace Starter.Views
             });
         }
 
-        public TextView TheGuid { get; set; }
+        public TextView TheGuid {
+            get { return this.GetControl<TextView>(); }
+        }
 
-        public Button myButton { get; set; }
+        public Button myButton { 
+            get { return this.GetControl<Button>(); }
+        }
     }
 }

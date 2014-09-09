@@ -55,7 +55,7 @@ Global
 		{B5EB1AF2-8FC7-4338-B652-323CB083B09F}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Starter-iOS\Starter-iOS.csproj
+		StartupItem = Starter-Android\Starter-Android.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
 		$1.FileWidth = 120
