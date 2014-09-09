@@ -17,6 +17,13 @@ namespace Starter
         // class-level declarations
         UIWindow window;
         TestViewController viewController;
+		AutoSuspendHelper suspendHelper;
+
+		public AppDelegate()
+		{
+			suspendHelper = new AutoSuspendHelper(this);
+		}
+
         //
         // This method is invoked when the application has loaded and is ready to run. In this 
         // method you should instantiate the window, load the UI into it and then make the window
@@ -32,7 +39,18 @@ namespace Starter
             window.RootViewController = viewController;
             window.MakeKeyAndVisible();
             
+			suspendHelper.FinishedLaunching(app, options);
             return true;
+        }
+
+        public override void DidEnterBackground(UIApplication application)
+        {
+            suspendHelper.DidEnterBackground(application);
+        }
+
+        public override void OnActivated(UIApplication application)
+        {
+            suspendHelper.OnActivated(application);
         }
     }
 }
