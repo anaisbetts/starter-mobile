@@ -17,6 +17,13 @@ namespace Starter
         // class-level declarations
         UIWindow window;
         TestViewController viewController;
+		AutoSuspendHelper suspendHelper;
+
+		public AppDelegate()
+		{
+			suspendHelper = new AutoSuspendHelper(this);
+		}
+
         //
         // This method is invoked when the application has loaded and is ready to run. In this 
         // method you should instantiate the window, load the UI into it and then make the window
@@ -26,26 +33,24 @@ namespace Starter
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-            // NB: GrossHackAlertTiem™:
-            //
-            // Monotouch appears to not load assemblies when you request them 
-            // via Type.GetType, unlike every other platform (even 
-            // Xamarin.Android). So, we've got to manually do what RxUI and 
-            // Akavache would normally do for us
-            var r = RxApp.MutableResolver;
-            (new ReactiveUI.Cocoa.Registrations()).Register((f,t) => r.Register(f, t));
-            (new ReactiveUI.Mobile.Registrations()).Register((f,t) => r.Register(f, t));
-            (new Akavache.Registrations()).Register(r.Register);
-            (new Akavache.Mobile.Registrations()).Register(r.Register);
-            (new Akavache.Sqlite3.Registrations()).Register(r.Register);
-
             window = new UIWindow(UIScreen.MainScreen.Bounds);
 
             viewController = new TestViewController();
             window.RootViewController = viewController;
             window.MakeKeyAndVisible();
             
+			suspendHelper.FinishedLaunching(app, options);
             return true;
+        }
+
+        public override void DidEnterBackground(UIApplication application)
+        {
+            suspendHelper.DidEnterBackground(application);
+        }
+
+        public override void OnActivated(UIApplication application)
+        {
+            suspendHelper.OnActivated(application);
         }
     }
 }
