@@ -27,9 +27,8 @@ script/cibuild
 
 1. Starter-Android: The main Android app project.
 1. Starter-iOS: The main iOS (both iPhone and iPad) application project.
-1. Starter-Core: Code that is shared between the two projects. Note that at
-   the moment, these are two separate projects, but they'll be one single
-   csproj soon once Xamarin releases proper Portable Library support.
+1. Starter-Core: Code that is shared between the two projects. This project
+   also has Xamarin.Forms set up and ready to go.
 
 # Philosophy
 
@@ -99,7 +98,7 @@ runner, it's easy to do:
 ```cs
 public TestViewModel(IAlertHelper alertHelper = null)
 {
-    alertHelper = alertHelper ??  RxApp.DependencyResolver.GetService<IAlertHelper>();
+    alertHelper = alertHelper ?? Locator.Current.GetService<IAlertHelper>();
     alertHelper.ShowAlert("Wat it do.");
 }
 ```
@@ -121,6 +120,6 @@ and in your AppDelegate, you can register it:
 ```cs
 public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 {
-    RxApp.MutableResolver.RegisterConstant(new AppleAlertHelper(), typeof(IAlertHelper));
+    Locator.CurrentMutable.RegisterConstant(new AppleAlertHelper(), typeof(IAlertHelper));
 }
 ```
