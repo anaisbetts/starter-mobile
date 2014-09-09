@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
-    <ProductVersion>10.0.0</ProductVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{044066A7-4F56-429A-8866-B14CF24E4D41}</ProjectGuid>
     <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -23,7 +23,8 @@
     <MtouchLink>None</MtouchLink>
     <ConsolePause>false</ConsolePause>
     <MtouchDebug>true</MtouchDebug>
-    <MtouchI18n />
+    <MtouchI18n>
+    </MtouchI18n>
     <MtouchArch>ARMv7</MtouchArch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
@@ -46,9 +47,11 @@
     <MtouchDebug>true</MtouchDebug>
     <ConsolePause>false</ConsolePause>
     <CodesignKey>iPhone Developer</CodesignKey>
-    <IpaPackageName />
+    <IpaPackageName>
+    </IpaPackageName>
     <MtouchLink>None</MtouchLink>
-    <MtouchI18n />
+    <MtouchI18n>
+    </MtouchI18n>
     <MtouchArch>ARMv7</MtouchArch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
@@ -86,48 +89,12 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\ext\Monotouch\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="ReactiveUI.Cocoa">
-      <HintPath>..\ext\Monotouch\ReactiveUI.Cocoa.dll</HintPath>
-    </Reference>
-    <Reference Include="ReactiveUI.Events">
-      <HintPath>..\ext\Monotouch\ReactiveUI.Events.dll</HintPath>
-    </Reference>
-    <Reference Include="ReactiveUI.Mobile">
-      <HintPath>..\ext\Monotouch\ReactiveUI.Mobile.dll</HintPath>
-    </Reference>
-    <Reference Include="ReactiveUI">
-      <HintPath>..\ext\Monotouch\ReactiveUI.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reactive.Core">
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Reactive">
       <HintPath>..\ext\Monotouch\System.Reactive.Core.dll</HintPath>
     </Reference>
-    <Reference Include="System.Reactive.Interfaces">
+    <Reference Include="System.Reactive">
       <HintPath>..\ext\Monotouch\System.Reactive.Interfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reactive.Linq">
-      <HintPath>..\ext\Monotouch\System.Reactive.Linq.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Reactive.PlatformServices">
-      <HintPath>..\ext\Monotouch\System.Reactive.PlatformServices.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Mobile">
-      <HintPath>..\ext\Monotouch\Xamarin.Mobile.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="Akavache.Portable">
-      <HintPath>..\ext\Monotouch\Akavache.Portable.dll</HintPath>
-    </Reference>
-    <Reference Include="Akavache">
-      <HintPath>..\ext\Monotouch\Akavache.dll</HintPath>
-    </Reference>
-    <Reference Include="Akavache.Sqlite3">
-      <HintPath>..\ext\Monotouch\Akavache.Sqlite3.dll</HintPath>
-    </Reference>
-    <Reference Include="Akavache.Mobile">
-      <HintPath>..\ext\Monotouch\Akavache.Mobile.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>10.0.0</ProductVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{BD5211E4-6E61-413D-A872-681DAF322379}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -44,27 +44,24 @@
     <Reference Include="ReactiveUI">
       <HintPath>..\ext\Monoandroid\ReactiveUI.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.Mobile">
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Xamarin">
       <HintPath>..\ext\Monoandroid\Xamarin.Mobile.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
+    <Reference Include="Newtonsoft">
       <HintPath>..\ext\Monoandroid\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="System.Reactive.Core">
+    <Reference Include="System.Reactive">
       <HintPath>..\ext\Monotouch\System.Reactive.Core.dll</HintPath>
     </Reference>
-    <Reference Include="System.Reactive.Interfaces">
+    <Reference Include="System.Reactive">
       <HintPath>..\ext\Monotouch\System.Reactive.Interfaces.dll</HintPath>
     </Reference>
-    <Reference Include="System.Reactive.Linq">
+    <Reference Include="System.Reactive">
       <HintPath>..\ext\Monotouch\System.Reactive.Linq.dll</HintPath>
     </Reference>
-    <Reference Include="System.Reactive.PlatformServices">
+    <Reference Include="System.Reactive">
       <HintPath>..\ext\Monotouch\System.Reactive.PlatformServices.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="Akavache.Portable">
-      <HintPath>..\ext\Monoandroid\Akavache.Portable.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
