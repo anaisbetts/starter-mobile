@@ -5,36 +5,28 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
-using ReactiveUI.Android;
 using ReactiveUI;
+using System.Reactive;
+using System.Reactive.Linq;
 using Starter.Core.ViewModels;
 using Akavache;
 
 namespace Starter.Views
 {
     [Activity (Label = "Starter-Android", MainLauncher = true)]
-    public class TestActivity : ReactiveActivity, IViewFor<TestViewModel>
+    public class TestActivity : ReactiveActivity<TestViewModel>
     {
         int count = 1;
 
         protected override async void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            BlobCache.ApplicationName = "Starter";
+            this.WireUpControls();
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
-            // Get our button from the layout resource,
-            // and attach an event to it
-            Button button = FindViewById<Button>(Resource.Id.myButton);
-            
-            button.Click += delegate
-            {
-                button.Text = string.Format("{0} clicks!", count++);
-            };
-
-            TheGuid = FindViewById<TextView>(Resource.Id.TheGuid);
+            myButton.Events().Click.Subscribe(_ => myButton.Text = string.Format("{0} clicks!", count++));
 
             this.OneWayBind(ViewModel, x => x.TheGuid, x => x.TheGuid.Text);
 
@@ -43,18 +35,8 @@ namespace Starter.Views
             });
         }
 
-        TestViewModel _ViewModel;
-        public TestViewModel ViewModel {
-            get { return _ViewModel; }
-            set { this.RaiseAndSetIfChanged(ref _ViewModel, value); }
-        }
+        public TextView TheGuid { get; set; }
 
-        object IViewFor.ViewModel {
-            get { return ViewModel; }
-            set { ViewModel = (TestViewModel)value; }
-        }
-
-        public TextView TheGuid { get; protected set; }
+        public Button myButton { get; set; }
     }
 }
-
