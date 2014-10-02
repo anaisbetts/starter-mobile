@@ -141,7 +141,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
-    <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -150,15 +149,7 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="Views\TestViewController.cs" />
-    <Compile Include="Views\TestViewController.designer.cs">
-      <DependentUpon>TestViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="AkavacheSqliteLinkerOverride.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <InterfaceDefinition Include="Views\TestViewController_iPhone.xib" />
-    <InterfaceDefinition Include="Views\TestViewController_iPad.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
