@@ -5,6 +5,16 @@ should help you get started quicker without hours of right-clicking.
 
 <img src="http://cl.ly/image/0s1S460g3k1r/content#png" width=335 />
 
+## Are you using Xamarin.Forms?
+
+**Before** you run the "Get Started" code, run the following command which is
+a branch configured to use ReactiveUI-XamForms and creates Xamarin Forms-based
+views.
+
+```sh
+git reset --hard xam-forms
+```
+
 ## How do I get started?
 
 ```sh
