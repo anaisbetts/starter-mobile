@@ -17,6 +17,12 @@ git push -u origin master
 NOTE: Don't use a '.' in any of your project names, iOS gets hella upset. Yes,
 I think it'd look way better than '-' too.
 
+## Are you using Xamarin.Forms?
+
+Before you run the "Get Started" code, switch to the xam-forms branch, which
+is this project configured to use ReactiveUI-XamForms and creates Xamarin
+Forms-based views.
+
 ## How do I build the project
 
 ```sh
