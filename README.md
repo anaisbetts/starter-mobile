@@ -24,6 +24,15 @@ git remote set-url origin https://github.com/MyUserName/NameOfMyNewProject
 git push -u origin master
 ```
 
+On Windows
+
+```sh
+git clone https://github.com/paulcbetts/starter-mobile
+script/create.ps1 NameOfMyNewProject
+git remote set-url origin https://github.com/MyUserName/NameOfMyNewProject
+git push -u origin master
+```
+
 NOTE: Don't use a '.' in any of your project names, iOS gets hella upset. Yes,
 I think it'd look way better than '-' too.
 
@@ -31,6 +40,12 @@ I think it'd look way better than '-' too.
 
 ```sh
 script/cibuild
+```
+
+On Windows
+
+```sh
+script/cibuild.ps1
 ```
 
 ## What's the project structure here?
